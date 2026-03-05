@@ -1,0 +1,6 @@
+INFO:root:factorial(21) = 51090942171709440000
+INFO:root:ln(23.0) = 3.1354942159291497
+INFO:root:factorial(5) = 120
+INFO:root:ln(1) = 0.0
+INFO:root:2^3 = 8.0
+INFO:root:sqrt(4) = 2.0
