@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Rishabhdew/scientific-calculator-devops.git'
+                git branch: 'main', url: 'https://github.com/Rishabhdew/scientific-calculator-devops.git'
             }
         }
 
