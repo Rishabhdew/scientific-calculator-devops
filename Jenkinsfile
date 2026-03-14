@@ -16,16 +16,16 @@ pipeline {
         }
 
         stage('Build Docker Image') {
-            steps {
-                sh 'docker build -t rish9981/scientific-calculator .'
-            }
-        }
+    steps {
+        sh '/usr/local/bin/docker build -t rish9981/scientific-calculator .'
+    }
+}
 
-        stage('Push Docker Image') {
-            steps {
-                sh 'docker push rish9981/scientific-calculator'
-            }
-        }
+stage('Push Docker Image') {
+    steps {
+        sh '/usr/local/bin/docker push rish9981/scientific-calculator'
+    }
+}
 
     }
 }
