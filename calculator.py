@@ -23,6 +23,9 @@ def power(x, b):
     logging.info(f"{x}^{b} = {result}")
     return result
 
+if __name__ == "__main__":
+    print("Scientific Calculator")
+
 while True:
     print("\nScientific Calculator")
     print("1. Square Root")
