@@ -1,57 +1,60 @@
 import math
-import logging
 
-logging.basicConfig(filename='calculator.log', level=logging.INFO)
+# ----------- Calculator Functions -----------
 
 def square_root(x):
-    result = math.sqrt(x)
-    logging.info(f"sqrt({x}) = {result}")
-    return result
+    return math.sqrt(x)
 
 def factorial(x):
-    result = math.factorial(x)
-    logging.info(f"factorial({x}) = {result}")
-    return result
+    return math.factorial(x)
 
 def natural_log(x):
-    result = math.log(x)
-    logging.info(f"ln({x}) = {result}")
-    return result
+    return math.log(x)
 
-def power(x, b):
-    result = math.pow(x, b)
-    logging.info(f"{x}^{b} = {result}")
-    return result
+def power(x, y):
+    return x ** y
 
-if __name__ == "__main__":
+
+# ----------- Interactive Menu -----------
+
+def run_calculator():
     print("Scientific Calculator")
 
-while True:
-    print("\nScientific Calculator")
-    print("1. Square Root")
-    print("2. Factorial")
-    print("3. Natural Log")
-    print("4. Power")
-    print("5. Exit")
+    while True:
+        print("\n1. Square Root")
+        print("2. Factorial")
+        print("3. Natural Log")
+        print("4. Power")
+        print("5. Exit")
 
-    choice = int(input("Enter choice: "))
+        choice = int(input("Enter choice: "))
 
-    if choice == 1:
-        x = float(input("Enter number: "))
-        print(square_root(x))
+        if choice == 1:
+            num = float(input("Enter number: "))
+            print(square_root(num))
 
-    elif choice == 2:
-        x = int(input("Enter number: "))
-        print(factorial(x))
+        elif choice == 2:
+            num = int(input("Enter number: "))
+            print(factorial(num))
 
-    elif choice == 3:
-        x = float(input("Enter number: "))
-        print(natural_log(x))
+        elif choice == 3:
+            num = float(input("Enter number: "))
+            print(natural_log(num))
 
-    elif choice == 4:
-        x = float(input("Enter base: "))
-        b = float(input("Enter power: "))
-        print(power(x,b))
+        elif choice == 4:
+            base = float(input("Enter base: "))
+            exponent = float(input("Enter exponent: "))
+            print(power(base, exponent))
 
-    else:
-        break
+        elif choice == 5:
+            print("Exiting calculator...")
+            break
+
+        else:
+            print("Invalid choice")
+
+
+# ----------- Main Execution -----------
+
+if __name__ == "__main__":
+    run_calculator()
