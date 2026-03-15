@@ -31,8 +31,14 @@ pipeline {
                 }
             }
         }
+     stage('Deploy using Ansible') {
+            steps {
+                sh 'ansible-playbook -i ansible/inventory ansible/deploy.yml'
+            }
+        }
 
     }
+    
 
     post {
         success {
