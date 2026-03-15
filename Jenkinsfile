@@ -32,5 +32,23 @@ stage('Push Docker Image') {
     }
 }
 
+  post {
+    success {
+        emailext (
+            subject: "SUCCESS: Build ${env.BUILD_NUMBER}",
+            body: "Build completed successfully.",
+            to: "rish9981.dewangan@gmail.com"
+        )
+    }
+
+    failure {
+        emailext (
+            subject: "FAILED: Build ${env.BUILD_NUMBER}",
+            body: "Build failed. Check Jenkins.",
+            to: "rish9981.dewangan@gmail.com"
+        )
+    }
+}
+
     }
 }
