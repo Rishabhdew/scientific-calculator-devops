@@ -23,7 +23,12 @@ pipeline {
 
 stage('Push Docker Image') {
     steps {
-        sh '/usr/local/bin/docker push rish9981/scientific-calculator'
+        withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+            sh '''
+            echo $DOCKER_PASS | /usr/local/bin/docker login -u $DOCKER_USER --password-stdin
+            /usr/local/bin/docker push rish9981/scientific-calculator
+            '''
+        }
     }
 }
 
