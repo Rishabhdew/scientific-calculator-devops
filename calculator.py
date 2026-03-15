@@ -54,7 +54,7 @@ def run_calculator():
             print("Invalid choice")
 
 
-# ----------- Main Execution -----------
+# ----------- Main Execution --------
 
 if __name__ == "__main__":
     run_calculator()
