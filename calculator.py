@@ -15,7 +15,7 @@ def power(x, y):
     return x ** y
 
 
-# ----------- Interactive Menu -----------
+# -------- Interactive Menu --------
 
 def run_calculator():
     print("Scientific Calculator")
