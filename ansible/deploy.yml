@@ -1,0 +1,12 @@
+- name: Deploy Scientific Calculator Container
+  hosts: local
+  tasks:
+    - name: Pull Docker image
+      command: docker pull rish9981/scientific-calculator:latest
+
+    - name: Stop old container
+      command: docker rm -f calculator-container
+      ignore_errors: yes
+
+    - name: Run container
+      command: docker run -d --name calculator-container rish9981/scientific-calculator
