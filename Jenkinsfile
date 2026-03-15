@@ -32,10 +32,10 @@ pipeline {
             }
         }
      stage('Deploy using Ansible') {
-            steps {
-                sh 'ansible-playbook -i ansible/inventory ansible/deploy.yml'
-            }
-        }
+    steps {
+        sh '/opt/homebrew/bin/ansible-playbook -i ansible/inventory ansible/deploy.yml'
+    }
+}
 
     }
     
